@@ -44,9 +44,6 @@ class _Visitor extends SimpleAstVisitor<void> {
     if (node.statements.isNotEmpty) {
       return;
     }
-    if (node.parent is CatchClause) {
-      return;
-    }
     if (rule.allowWithComments && _isPrecedingCommentAny(node)) {
       return;
     }

@@ -36,6 +36,53 @@ void f(User user) {
     );
   }
 
+  void test_null_assertion_in_conditional_expression() async {
+    await assertDiagnostics(
+      r'''
+class Pocket {
+  Object? geoLocation;
+  String? infoLocation;
+}
+
+void f(Pocket pocket) {
+  if (pocket.geoLocation == null && pocket.infoLocation!.isNotEmpty) {}
+}
+''',
+      [lint(144, 1)],
+    );
+  }
+
+  void test_null_assertion_in_argument_list() async {
+    await assertDiagnostics(
+      r'''
+class GeoLocation {
+  final double lat;
+  final double lng;
+
+  const GeoLocation(this.lat, this.lng);
+}
+
+class Site {
+  GeoLocation? geoLocation;
+}
+
+void f(Site site) {
+  final location = GeoLocation(site.geoLocation!.lat, site.geoLocation!.lng);
+}
+''',
+      [lint(216, 1), lint(239, 1)],
+    );
+  }
+
+  void test_null_assertion_in_validator_callback() async {
+    await assertDiagnostics(
+      r'''
+String? validate(String? v) => v!.isEmpty ? 'required' : null;
+''',
+      [lint(32, 1)],
+    );
+  }
+
   void test_no_null_assertion() async {
     await assertNoDiagnostics(r'''
 void f(String? value) {

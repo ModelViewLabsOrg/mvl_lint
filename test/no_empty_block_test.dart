@@ -19,6 +19,19 @@ void f() {}
     );
   }
 
+  void test_empty_catch_block() async {
+    await assertDiagnostics(
+      r'''
+void f() {
+  try {
+    print('x');
+  } catch (_) {}
+}
+''',
+      [lint(49, 2)],
+    );
+  }
+
   void test_nonempty_block_is_allowed() async {
     await assertNoDiagnostics(r'''
 void f() {
