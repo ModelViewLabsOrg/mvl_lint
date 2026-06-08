@@ -1,0 +1,7 @@
+include: package:mvl_lint/analysis_options.yaml
+
+plugins:
+  mvl_lint:
+    path: ..
+    diagnostics:
+      avoid_null_assertion: true

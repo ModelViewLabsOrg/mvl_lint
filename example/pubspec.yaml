@@ -1,0 +1,9 @@
+name: mvl_lint_example
+publish_to: none
+
+environment:
+  sdk: ^3.12.1
+
+dev_dependencies:
+  mvl_lint:
+    path: ..
