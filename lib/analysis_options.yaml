@@ -1,4 +1,9 @@
 # https://github.com/flutter/flutter/blob/stable/analysis_options.yaml
+#
+# Built-in linter rules in this file take priority over related mvl_lint plugin
+# rules. For example: file_names, unnecessary_late, unrelated_type_equality_checks,
+# and avoid_unused_constructor_parameters remain the source of truth here.
+# Enable mvl_lint plugin rules in your package's top-level analysis_options.yaml.
 
 formatter:
   page_width: 100

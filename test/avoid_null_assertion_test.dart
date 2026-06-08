@@ -37,27 +37,23 @@ void f(User user) {
   }
 
   void test_no_null_assertion() async {
-    await assertNoDiagnostics(
-      r'''
+    await assertNoDiagnostics(r'''
 void f(String? value) {
   if (value != null) {
     print(value);
   }
 }
-''',
-    );
+''');
   }
 
   void test_logical_not_is_allowed() async {
-    await assertNoDiagnostics(
-      r'''
+    await assertNoDiagnostics(r'''
 void f(bool value) {
   if (!value) {
     print('false');
   }
 }
-''',
-    );
+''');
   }
 }
 

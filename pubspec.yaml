@@ -11,8 +11,10 @@ dependencies:
   analysis_server_plugin: ^0.3.16
   analyzer: ^13.1.0
   analyzer_plugin: ^0.14.10
-  # path: ^1.9.0
+  collection: ^1.19.1
+  path: ^1.9.1
 
+  _fe_analyzer_shared: any
 dev_dependencies:
   analyzer_testing: ^0.3.0
   lints: ^6.0.0
