@@ -2,9 +2,11 @@ class NoEmptyBlockExample {
   // no_empty_block
   void empty() {}
 
-  void emptyCatch() {
-    try {
-      print('move map');
-    } catch (_) {}
+  void emptyCatch1() {
+    try {} catch (_) {}
+  }
+
+  void emptyCatch2() {
+    try {} catch (e) {}
   }
 }
