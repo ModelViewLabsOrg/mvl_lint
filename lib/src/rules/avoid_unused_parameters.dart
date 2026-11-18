@@ -68,7 +68,7 @@ class _Visitor extends SimpleAstVisitor<void> {
     final FormalParameterList? parameters = node.parameters;
 
     if (parent is ClassDeclaration && parent.abstractKeyword != null ||
-        node.isAbstract ||
+        node.isComplete ||
         node.externalKeyword != null ||
         parameters == null ||
         parameters.parameters.isEmpty) {
